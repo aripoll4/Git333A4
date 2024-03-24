@@ -44,7 +44,7 @@
             </form>
 
             <hr>
-            <table>
+            <table border="1">
                 <tr>
                     <th>ClassId</th>
                     <th style = "text-align: start">Dept</th>
@@ -56,8 +56,8 @@
                 {% if courses|length != 0: %}
                     {% for course in courses: %}
                         <tr>
-                            <td> <!-- Come back to this if we use different labels or a different process -->
-                                <a href = "{{ url_for('course_details', clsid = course.get_clsid())}}">{{course.get_clsid()}}</a>
+                            <td> <!-- Come back to this  -->
+                                <a href = "{{ url_for('course_details', classid = course.get_clsid())}}">{{course.get_clsid()}}</a>
                             </td>
                             <!-- Come back to this if we use different labels or a different process -->
                             <td>{{course.get_dept()}}</td>
@@ -69,6 +69,6 @@
                 {% endif %}
             </table>
             <br>
-                {% include 'footer.html' %}
+            {% include 'footer.html' %}
         </body>
     <html>
