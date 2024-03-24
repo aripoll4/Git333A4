@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------
 
 import sys
-import # whatever we name our code
+import webversion1
 import argparse
 
 def main():
@@ -24,7 +24,7 @@ def main():
         sys.exit(1)
 
     try:
-        penny.app.run(host='0.0.0.0', port=port, debug=True)
+        webversion1.app.run(host='0.0.0.0', port=port, debug=True)
     except Exception as ex:
         print(ex, file=sys.stderr)
         sys.exit(1)
