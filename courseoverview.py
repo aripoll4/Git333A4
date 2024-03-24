@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 #-----------------------------------------------------------------------
 # courseoverview.py
 # Author: Wangari Karani, Alfred Ripoll
