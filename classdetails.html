@@ -7,13 +7,83 @@
 
 <html>
     <body>
-        {% include 'header.html %'}
+        {% include 'header.html' %}
         <hr>
-        
 
-        
+        <h2> <strong>Class Details (class id {{classid}})</strong></h2>
+        <table border="1">
+            
+            <tr>
+                <td align = "left"><strong>Course Id</strong></td>
+                <td>{{course_detail.get_crsid()}}</td>
+            </tr>
+   
+            <tr>
+                <td align = "left"><strong>Days</strong></td>
+                <td>{{course_detail.get_days()}}</td>
+            </tr>
+   
+            <tr>
+                <td align="left"><strong>Start Time</strong></td>
+                <td>{{course_detail.get_sttime()}}</td>
+            </tr>
+   
+            <tr>
+                <td align="left"><strong>End Time</strong></td>
+                <td>{{course_detail.get_endtime()}}</td>
+            </tr>
+   
+            <tr>
+                <td align="left"><strong>Building</strong></td>
+                <td>{{course_detail.get_bldg()}}</td>
+            </tr>
+
+            <tr>
+                <td align="left"><strong>Room</strong></td>
+                <td>{{course_detail.get_rm()}}</td>
+            </tr>
+        </table>
+
+        <h2> <strong>Course Details (course id {{course_detail.get_crsid()}})</strong></h2>
+
+        <table border="1">
+            {% for dept in course_detail.get_depts_crsnum(): %}
+            <tr>
+                <td align="left"><strong>Dept and </strong><br><strong>Number</strong></td>
+                <td>{{dept}}</td>
+            </tr>
+            {% endfor %}
+            
+            <tr>
+                <td align="left"><strong>Area</strong></td>
+                <td>{{course_detail.get_area()}}</td>
+            </tr>
+
+            <tr>
+                <td align="left"><strong>Title</strong></td>
+                <td>{{course_detail.get_title()}}</td>
+            </tr>
+
+            <tr>
+                <td align="left"><strong>Description</strong></td>
+                <td>{{course_detail.get_descrip()}}</td>
+            </tr>
+
+            <tr>
+                <td align="left"><strong>Prerequisites</strong></td>
+                <td>{{course_detail.get_prereqs()}}</td>
+            </tr>
+            
+            {% for prof in course_detail.get_profs(): %}
+            <tr>
+                <td align="left"><strong>Professor</strong></td>
+                <td>{{prof}}</td>
+            </tr>
+            {% endfor %}
+        </table> 
         <hr>
-        <span>Click here to do <a href="javascript:history.back()">another class search</a> </span>
+        <span>Click here to do <a href="javascript:history.back()">another class search</a></span>
+        <br>
         {% include 'footer.html' %}
     </body>
 </html>
