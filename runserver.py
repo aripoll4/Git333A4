@@ -24,6 +24,7 @@ def main():
         sys.exit(1)
 
     try:
+        # In case we rename this to webversion2
         webversion1.app.run(host='0.0.0.0', port=port, debug=True)
     except Exception as ex:
         print(ex, file=sys.stderr)
