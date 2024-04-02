@@ -56,10 +56,9 @@
                 {% if courses|length != 0: %}
                     {% for course in courses: %}
                         <tr>
-                            <td> <!-- Come back to this  -->
+                            <td> 
                                 <a href = "{{ url_for('course_details', classid = course.get_clsid())}}">{{course.get_clsid()}}</a>
                             </td>
-                            <!-- Come back to this if we use different labels or a different process -->
                             <td>{{course.get_dept()}}</td>
                             <td>{{course.get_num()}}</td>
                             <td>{{course.get_area()}}</td>

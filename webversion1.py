@@ -38,8 +38,9 @@ def course_search():
     html_code = flask.render_template("classsearch.html", 
         prev_dept = dept, prev_num = num, prev_area = area, prev_title = title, courses = courses)
     response = flask.make_response(html_code)
+    response.set_cookie('prev_dept', prev_dept, 'prev_num', prev_num, 'prev_area', prev_area, 'prev_title', prev_title)
     return response
-
+    
 @app.route("/course_details", methods = ['GET'])
 def course_details():
     classid = flask.request.args.get("classid")
