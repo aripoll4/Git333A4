@@ -67,22 +67,23 @@ class DBQuery:
 
     @staticmethod
     def a1regdetails(classid):
+        print(classid)
         try:
             with sqlite3.connect(DATABASE_URL, isolation_level=None,uri=True) as connection:
                 with contextlib.closing(connection.cursor()) as cursor:
                     stmt_str = "SELECT classes.courseid, days, starttime, endtime, bldg, roomnum,"
-                    stmt_str += " dept, coursenum, area, title, descrip, prereqs, coursesprofs.profid, profname"
-                    stmt_str += " FROM classes, courses, crosslistings, coursesprofs, profs"
+                    stmt_str += " dept, coursenum, area, title, descrip, prereqs"
+                    stmt_str += " FROM classes, courses, crosslistings"
                     stmt_str += " WHERE classes.courseid = courses.courseid"
                     stmt_str += " AND classes.courseid = crosslistings.courseid"
-                    stmt_str += " AND crosslistings.courseid = coursesprofs.courseid"
-                    stmt_str += " AND coursesprofs.profid = profs.profid"
                     stmt_str += " AND classid = ?"
 
                     cursor.execute(stmt_str, [classid])
                     row = cursor.fetchone()
+                    print('made it here 1')
                     
                     if row == None:
+                        print('row is none')
                         err_str = "Non-existing classid"
                         print(err_str, file=sys.stderr)
                         return False, err_str 
@@ -95,6 +96,8 @@ class DBQuery:
                     endtime = str(row[3])
                     bldg = str(row[4])
                     rm = str(row[5])
+
+                    print('made it here 2')
                     
 
                     dept_str = 'SELECT dept, coursenum, courses.courseid'
@@ -106,6 +109,8 @@ class DBQuery:
                     cursor.execute(dept_str, [classid])
                     dept_row = cursor.fetchone()
                     depts_crsnum = []
+
+                    print('made it here 3')
 
                     while dept_row is not None:
                         dept = dept_row[0] + " "
