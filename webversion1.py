@@ -38,7 +38,10 @@ def course_search():
     html_code = flask.render_template("classsearch.html", 
         prev_dept = dept, prev_num = num, prev_area = area, prev_title = title, courses = courses)
     response = flask.make_response(html_code)
-    response.set_cookie('prev_dept', prev_dept, 'prev_num', prev_num, 'prev_area', prev_area, 'prev_title', prev_title)
+    response.set_cookie('prev_dept', dept)
+    response.set_cookie('prev_num', num)
+    response.set_cookie('prev_area', area)
+    response.set_cookie('prev_title', title)
     return response
     
 @app.route("/course_details", methods = ['GET'])
@@ -69,8 +72,22 @@ def course_details():
         html_code = flask.render_template("errorpage.html", error_msg = error_msg)
         response = flask.make_response(html_code)
         return response
+
+    prev_dept = flask.request.cookies.get("prev_dept")
+    if(prev_dept is None):
+        prev_dept = ""
+    prev_num = flask.request.cookies.get("prev_num")
+    if(prev_num is None):
+        prev_num = ""
+    prev_area = flask.request.cookies.get("prev_area")
+    if(prev_area is None):
+        prev_area = ""
+    prev_title = flask.request.cookies.get("prev_title")
+    if(prev_title is None):
+        prev_title = ""
         
-    html_code = flask.render_template("classdetails.html", classid = classid, course_detail = course_detail)
+    html_code = flask.render_template("classdetails.html", classid = classid, course_detail = course_detail,
+    prev_dept = prev_dept, prev_num = prev_num, prev_area = prev_area, prev_title = prev_title)
     response = flask.make_response(html_code)
     response.set_cookie('prev_classid', prev_classid)
     return response
