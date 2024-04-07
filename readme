@@ -6,17 +6,17 @@ Wangari Karani, Alfred Ripoll
 The purpose of this assignment is to help you learn or review client-side web programming.
 
 Wangari's Contribution:
-Wangari joined the liveshare on VsCode to code and debug with Alfred. We worked on everything together for the most part. We usually took turns talking about a concept and then one person debugged and monitored as the other person coded.
+We took turns creating and joining each other's Liveshare sessions, writing the code and debugging. We worked on everything together for the most part. Wangari wrote more of the code that adapted the ClassSearch to use JQuery then we worked together to understand and debug.
 
 Alfred's Contribution:
-Alfred created the Github repository that we used for the assignment. Alfred also created the liveshare on VsCode to code and debug with Wangari. We worked on everything together for the most part. We usually took turns talking about a concept and then one person debugged and monitored as the other person coded.
+Alfred created the Github repository that we used for the assignment. We took turns creating and joining each other's Liveshare sessions, writing the code and debugging. We worked on everything together for the most part. Alfred contributed more of the code for formatting the output to look exactly like the reference application then we worked together to understand and debug.
 
 Help Received:
 We went for office hours to understand where we lost points in WebVersion1 so that we could fix them in WebVersion2.
 
 Sources of Information Used:
 Assignment corrections based on our assignment 3 grade 
-Multiple sources of code from lecture, the main ones used were PennyResponsive and PennyBootstrap files 
+Multiple sources of code from lecture, mainly the PennyJQuery3, PennyResponsive and PennyBootstrap files 
 The HTML library 
 Ed Discussion
 
@@ -24,6 +24,6 @@ Time Spent:
 About 10 hours
 
 Assessment of the assignment (Did it help you to learn? What did it help you to learn? Do you have any suggestions for improvement?)
-We learned a lot more about HTML, CSS and how to make our webpages more attractive. I think it was a bit difficult figuring out how to get our code to work with the reference files.
+We learned a lot more about HTML, CSS, JQuery and how to make our webpages more attractive.
 
 (Optionally) Any information that will help us to grade your work in the most favorable light. In particular you must describe all known bugs.

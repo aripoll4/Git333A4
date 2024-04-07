@@ -43,10 +43,6 @@
 			<br>
         </div>
             
-		<div class="container-fluid">
-			<table class="table table-striped" id = "courses"></table>
-		</div>
-
 		<div class = "container-fluid">
 			<table class="table table-striped" id="overviewsTable">
 			</table>
@@ -65,7 +61,7 @@
             //-------------------------------------------------------------
 
             function handleResponse(data){
-				$('#courses').html(data);
+				$('#overviewsTable').html(data);
 			}
 
 			function handleError(request) {
