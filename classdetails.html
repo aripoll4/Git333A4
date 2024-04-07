@@ -17,6 +17,7 @@
     
           <style>
             .header, .footer {background-color: #295078; color: white;}
+            .table td, .table th {padding: 8px;}
           </style> 
     </head>
 
@@ -28,98 +29,85 @@
         </div>
 
         <div class="container-fluid">
-            <div class="row" >
-                <h2> Class Details (class id {{classid}})</h2>
-            </div>
+            <h2> Class Details (class id {{classid}})</h2>
+        </div>
 
-            <div class="row">
-                <div class="col"><strong>Course Id</strong></div>
-                <div class="col">{{course_detail.get_crsid()}}</div>
-            </div>
-            <hr>
+        <div class="container-fluid">
+        <table class="table table-striped">
+            <tr>
+                <td><strong>Course Id</strong></td>
+                <td>{{course_detail.get_crsid()}}</td>
+            </tr>
             
-            <div class="row">
-                <div class="col"><strong>Days</strong></div>
-                <div class="col">{{course_detail.get_days()}}</div>
-            </div>
-            <hr>
+            <tr>
+                <td><strong>Days</strong></td>
+                <td>{{course_detail.get_days()}}</td>
+            </tr>
 
-            <div class="row">
-                <div class="col"><strong>Start Time</strong></div>
-                <div class="col">{{course_detail.get_sttime()}}</div>
-            </div>
-            <hr>
+            <tr>
+                <td><strong>Start time</strong></td>
+                <td>{{course_detail.get_sttime()}}</td>
+            </tr>
 
-            <div class="row">
-                <div class="col"><strong>End Time</strong></div>
-                <div class="col">{{course_detail.get_endtime()}}</div>
-            </div>
-            <hr>
+            <tr>
+                <td><strong>End time</strong></td>
+                <td>{{course_detail.get_endtime()}}</td>
+            </tr>
             
-            <div class="row">
-                <div class="col"><strong>Building</strong></div>
-                <div class="col">{{course_detail.get_bldg()}}</div>
-            </div>
-            <hr>
+            <tr>
+                <td><strong>Building</strong></td>
+                <td>{{course_detail.get_bldg()}}</td>
+            </tr>
             
-            <div class="row">
-                <div class="col"><strong>Room</strong></div>
-                <div class="col">{{course_detail.get_rm()}}</div>
-            </div>
-            <hr>
-            
-            <div class="row">
-                <h2> Course Details (course id {{course_detail.get_crsid()}})</h2>
-            </div>
+            <tr>
+                <td><strong>Room</strong></td>
+                <td>{{course_detail.get_rm()}}</td>
+            </tr>
+        </table>
             
         </div>
 
         <div class="container-fluid">
+            <h2> Course Details (course id {{course_detail.get_crsid()}})</h2>
+        </div>
+
+        <div class="container-fluid">
+        <table class="table table-striped">
             {% for dept in course_detail.get_depts_crsnum(): %}
-            <div class="row">
-                <div class="col-sm-2"><strong>Dept and </strong><br><strong>Number</strong></div>
-                <div class="col">{{dept}}</div>
-            </div>
-            <hr>
+            <tr>
+                <td ><strong>Dept and </strong><br><strong>Number</strong></td>
+                <td>{{dept}}</td>
+            </tr>
             {% endfor %}
             
-            <div class="row">
-                <div class="col-sm-2"><strong>Area</strong></div>
-                <div class="col">{{course_detail.get_area()}}</div>
-            </div>
-            <hr>
-
-            <div class="row">
-                <div class="col-sm-2"><strong>Title</strong></div>
-                <div class="col">{{course_detail.get_title()}}</div>
-            </div>
-            <hr>
-
-            <div class="row">
-                <div class="col-sm-2"><strong>Description</strong></div>
-                <div class="col">{{course_detail.get_descrip()}}</div>
-            </div>
-            <hr>
-
-            <div class="row">
-                <div class="col-sm-2"><strong>Prerequisites</strong></div>
-                <div class="col">{{course_detail.get_prereqs()}}</div>
-            </div>
-            <hr>
-
-            <div class="row">
-                <div class="col-sm-2"><strong>Title</strong></div>
-                <div class="col">{{course_detail.get_title()}}</div>
-            </div>
-            <hr>
+            <tr>
+                <td ><strong>Area</strong></td>
+                <td>{{course_detail.get_area()}}</td>
+            </tr>
+            <tr>
+                <td><strong>Title</strong></td>
+                <td>{{course_detail.get_title()}}</td>
+            </tr>
+            <tr>
+                <td><strong>Description</strong></td>
+                <td>{{course_detail.get_descrip()}}</div>
+            </tr>
+            <tr>
+                <td><strong>Prerequisites</strong></td>
+                <td>{{course_detail.get_prereqs()}}</td>
+            </tr>
+            <tr>
+                <td><strong>Title</strong></td>
+                <td>{{course_detail.get_title()}}</td>
+            </tr>
             
             {% for prof in course_detail.get_profs(): %}
-            <div class="row">
-                <div class="col-sm-2"><strong>Professor</strong></div>
-                <div class="col">{{prof}}</div>
-            </div>
-            <hr>
+            <tr>
+                <td><strong>Professor</strong></td>
+                <td>{{prof}}</td>
+            </tr>
             {% endfor %}
+        </table>
         </div>
         
         <div class="container-fluid, footer">
