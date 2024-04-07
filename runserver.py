@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------
 
 import sys
-import webversion1
+import webversion2
 import argparse
 
 def main():
@@ -25,7 +25,7 @@ def main():
 
     try:
         # In case we rename this to webversion2
-        webversion1.app.run(host='0.0.0.0', port=port, debug=True)
+        webversion2.app.run(host='0.0.0.0', port=port, debug=True)
     except Exception as ex:
         print(ex, file=sys.stderr)
         sys.exit(1)
