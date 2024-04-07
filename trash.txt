@@ -3,3 +3,73 @@ response.set_cookie('prev_dept', dept)
     response.set_cookie('prev_area', area)
     response.set_cookie('prev_title', title)
 
+<table>
+	<div class="row">
+		<div class="col-sm-3">
+			<input class="form-control" type="text" name="dept" id="deptInput" placeholder="Department" autofocus/>
+		</div>
+				
+		<div class="col-sm-3">
+			<input class="form-control" type="text" name="num" id = "numInput" placeholder="Number" autofocus/>
+		</div>
+				
+		<div class="col-sm-3">
+			<input class="form-control" type="text" name="area" id = "areaInput" placeholder="Area" autofocus/>
+		</div>
+				
+		<div class="col-sm-3">
+	    	<input class="form-control" type="text" name="title" id = "titleInput" placeholder="Title" autofocus/>
+		</div>
+    </div>
+</table>
+
+<table>
+	<tr>
+		<td>
+			<input class="form-control" type="text" name="dept" id="deptInput" placeholder="Department" autofocus/>
+		</td>
+				
+		<td>
+			<input class="form-control" type="text" name="num" id = "numInput" placeholder="Number" autofocus/>
+		</td>
+				
+	    <td>
+			<input class="form-control" type="text" name="area" id = "areaInput" placeholder="Area" autofocus/>
+		</td>
+				
+		<td>
+			<input class="form-control" type="text" name="title" id = "titleInput" placeholder="Title" autofocus/>
+		</td>
+	</tr>
+</table>
+
+let requestData = {
+					type: 'GET',
+					url: url,
+					success: handleResponse,
+					error: handleError
+				};
+				request = $.ajax(requestData);
+
+
+<!-- <tr>
+				<th>ClassId</th>
+				<th style = "text-align: start">Dept</th>
+				<th style = "text-align: start">Num</th>
+				<th style = "text-align: start">Area</th>
+				<th style = "text-align: start">Title</th>
+			</tr>
+		
+			{% if courses|length != 0: %}
+				{% for course in courses: %}
+					<tr>
+						<td> 
+							<a href = "{{ url_for('course_details', classid = course.get_clsid())}}" target="childWindow">{{course.get_clsid()}}</a>
+						</td>
+						<td>{{course.get_dept()}}</td>
+						<td>{{course.get_num()}}</td>
+						<td>{{course.get_area()}}</td>
+						<td>{{course.get_title()}}</td>
+					</tr> 
+				{% endfor %}
+			{% endif %} -->

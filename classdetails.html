@@ -17,7 +17,6 @@
     
           <style>
             .header, .footer {background-color: #295078; color: white;}
-            .table td, .table th {padding: 8px;}
           </style> 
     </head>
 
@@ -68,7 +67,6 @@
         <div class="container-fluid">
             <h2> Course Details (course id {{course_detail.get_crsid()}})</h2>
         </div>
-
         <div class="container-fluid">
         <table class="table table-striped">
             {% for dept in course_detail.get_depts_crsnum(): %}
@@ -94,11 +92,7 @@
                 <td><strong>Prerequisites</strong></td>
                 <td>{{course_detail.get_prereqs()}}</td>
             </tr>
-            <tr>
-                <td><strong>Title</strong></td>
-                <td>{{course_detail.get_title()}}</td>
-            </tr>
-            
+
             {% for prof in course_detail.get_profs(): %}
             <tr>
                 <td><strong>Professor</strong></td>

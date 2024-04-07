@@ -21,51 +21,34 @@
 		<div class="container-fluid, header">
 			<center> <h1>Registrar's Office: Class Search</h1> </center>
 				
-            <table width="100">
+            <table>
 				<div class="row">
 					<div class="col-sm-3">
 						<input class="form-control" type="text" name="dept" id="deptInput" placeholder="Department" autofocus/>
 					</div>
-				
+							
 					<div class="col-sm-3">
 						<input class="form-control" type="text" name="num" id = "numInput" placeholder="Number" autofocus/>
 					</div>
-				
+							
 					<div class="col-sm-3">
 						<input class="form-control" type="text" name="area" id = "areaInput" placeholder="Area" autofocus/>
 					</div>
-				
+							
 					<div class="col-sm-3">
 						<input class="form-control" type="text" name="title" id = "titleInput" placeholder="Title" autofocus/>
 					</div>
 				</div>
-            </table>
+			</table>
 			<br>
         </div>
             
-		<div id = "coursesDiv" class="container-fluid">
-			<table class="table table-striped">
-			<tr>
-				<th>ClassId</th>
-				<th style = "text-align: start">Dept</th>
-				<th style = "text-align: start">Num</th>
-				<th style = "text-align: start">Area</th>
-				<th style = "text-align: start">Title</th>
-			</tr>
-		
-			{% if courses|length != 0: %}
-				{% for course in courses: %}
-					<tr>
-						<td> 
-							<a href = "{{ url_for('course_details', classid = course.get_clsid())}}" target="childWindow">{{course.get_clsid()}}</a>
-						</td>
-						<td>{{course.get_dept()}}</td>
-						<td>{{course.get_num()}}</td>
-						<td>{{course.get_area()}}</td>
-						<td>{{course.get_title()}}</td>
-					</tr> 
-				{% endfor %}
-			{% endif %}
+		<div class="container-fluid">
+			<table class="table table-striped" id = "courses"></table>
+		</div>
+
+		<div class = "container-fluid">
+			<table class="table table-striped" id="courses">
 			</table>
 		</div>
 
@@ -82,7 +65,7 @@
             //-------------------------------------------------------------
 
             function handleResponse(data){
-				$('#coursesDiv').html(data);
+				$('#courses').html(data);
 			}
 
 			function handleError(request) {
@@ -103,14 +86,15 @@
 				let encodedArea = encodeURIComponent(area);
 				let encodedTitle = encodeURIComponent(title);
 
-				let url = '/course_search?dept=' + encodedDept;
+				let url = '/course_results?dept=' + encodedDept;
 				url += '&num=' + encodedNum;
 				url += '&area='+ encodedArea;
 				url += '&title=' + encodedTitle;
 				
-				if (request !== null)
+				if (request !== null) {
 					request.abort();
-
+				}
+				
 				let requestData = {
 					type: 'GET',
 					url: url,
@@ -132,6 +116,7 @@
 				$('#numInput').on('input', debouncedGetCourses);
 				$('#areaInput').on('input', debouncedGetCourses);
 				$('#titleInput').on('input', debouncedGetCourses);
+				getCourses()
 			}
 
 			$('document').ready(setup);
