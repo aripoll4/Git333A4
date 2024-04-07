@@ -30,7 +30,7 @@
         </div>
         
         <div class="container-fluid">
-        <table class="table table-striped">
+        <table id="classDetailsTable" class="table table-striped">
             <tr>
                 <td><strong>Course Id</strong></td>
                 <td>{{course_detail.get_crsid()}}</td>
@@ -68,7 +68,7 @@
             <h2> Course Details (course id {{course_detail.get_crsid()}})</h2>
         </div>
         <div class="container-fluid">
-        <table class="table table-striped">
+        <table id="courseDetailsTable" class="table table-striped">
             {% for dept in course_detail.get_depts_crsnum(): %}
             <tr>
                 <td ><strong>Dept and </strong><br><strong>Number</strong></td>
