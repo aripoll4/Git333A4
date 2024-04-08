@@ -73,7 +73,7 @@
 
 			function getCourses() {
 				let dept = $('#deptInput').val();
-				let num = $('#numInput').val();
+				let num = $('#coursenumInput').val();
 				let area = $('#areaInput').val();
 				let title = $('#titleInput').val();
 
@@ -109,7 +109,7 @@
 
 			function setup() {
 				$('#deptInput').on('input', debouncedGetCourses);
-				$('#numInput').on('input', debouncedGetCourses);
+				$('#coursenumInput').on('input', debouncedGetCourses);
 				$('#areaInput').on('input', debouncedGetCourses);
 				$('#titleInput').on('input', debouncedGetCourses);
 				getCourses()
